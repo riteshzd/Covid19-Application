@@ -25,11 +25,15 @@ class App extends React.Component{
         console.log(res);
     }
     render(){
+
         const {data, choosenCountry} = this.state;
         console.log(data)
         return(
             <div>
                 <div className={styles.container}>
+                <div className={styles.header}>
+                    <h3>COVID-19 Application</h3>
+                </div>   
                 <Cards data={data}/>
                 <CountryPicker handleCountryChange={this.handleCountryChange}/>
                 <Charts data={data} country={choosenCountry}/>
