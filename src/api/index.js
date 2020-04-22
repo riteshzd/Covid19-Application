@@ -7,7 +7,7 @@ const apiURLCountry = "https://covid19.mathdro.id/api/countries"
 export const fetchData = async(countryName)=>{
     let dynamicURL = apiURL;
     console.log(countryName);
-    if(countryName && countryName!=="Global"){
+    if(countryName && countryName!=="global"){
         dynamicURL = apiURLCountry.concat("/").concat(countryName)
     }
     try {
