@@ -1,7 +1,6 @@
 import React,{useState, useEffect} from 'react'
-import {NativeSelect, FormControl} from '@material-ui/core'
-import styles from './CountryPicker.module.css'
 import {fetchCountries} from '../../api/index'
+import Select from 'react-select'
 
 const CountryPicker = ({handleCountryChange})=>{
     const[fetchedCountries, setFetchedCountries] = useState([])
@@ -15,14 +14,39 @@ const CountryPicker = ({handleCountryChange})=>{
 
     console.log(fetchedCountries);
     
+    const customStyles = {
+        option: (provided, state) => ({  //manages the options
+          ...provided,
+          backgroundColor: state.isSelected ? 'gray' : 'cornsilk',
+          '&:hover': {
+            backgroundColor:'darkgray'
+        }
+        }),
+        control: base => ({  //manages the select bar
+            ...base,
+            width: '300px',
+            backgroundColor: 'black',
+          })
+      }
+    
+    let countryList = []
+    let count = 0;
+    let singleCountry={}
+    countryList = fetchedCountries.map(function (country){
+        count === 0 ? singleCountry = {value:"World",label:"Global"}: singleCountry = {value:country,label:country}
+        count+=1
+        return singleCountry
+    })
 
     return(
-        <FormControl style={styles.formControl}>
-            <NativeSelect defaultValue="" onChange={(e)=>handleCountryChange(e.target.value)}>
-                <option value="World">Global</option>
-                {fetchedCountries.map((country)=><option value={country}>{country}</option>)}
-            </NativeSelect>
-        </FormControl>
+        <div>
+        <Select 
+            styles={customStyles}
+            options={countryList} 
+            onChange={(e)=>handleCountryChange(e.value)}
+            placeholder="Select a country"/>
+        </div>
+        
     )
 }
 
