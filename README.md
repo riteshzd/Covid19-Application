@@ -4,3 +4,9 @@ This application is made using React js and javascript is used for the API calls
 
 The API used to collect the data is https://covid19.mathdro.id/api
 
+## Usage
+'''
+npm install
+npm start
+'''
+
