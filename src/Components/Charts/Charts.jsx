@@ -35,7 +35,11 @@ const Charts = ({data:{confirmed,recovered,deaths}, country})=>{
                     fill: true
                 }]
             }}
-        />) : null
+            width={800}
+            height={400}
+            options={{ maintainAspectRatio: false }}
+        />
+            ) : null
     );
 
     const barChart = (
@@ -54,6 +58,9 @@ const Charts = ({data:{confirmed,recovered,deaths}, country})=>{
                     legend: {display:false},
                     title: {display:true, text:"Current scenario in "+country , fontColor:"white"},
                 }}
+                width={800}
+                height={400}
+                options={{ maintainAspectRatio: false }}
             />
         ) : null
     );
