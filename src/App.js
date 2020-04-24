@@ -39,7 +39,7 @@ class App extends React.Component{
                 <Charts data={data} country={choosenCountry}/>
                 </div>
                 <div className={styles.designer}>
-                    <h6>designed by riteshzd</h6>
+                    <h6><a href="https://github.com/riteshzd/Covid19-Application">designed by riteshzd</a></h6>
                 </div>
             </div>
     

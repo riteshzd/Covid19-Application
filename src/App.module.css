@@ -28,3 +28,16 @@ body {
         margin: 0 10%
     }
 }
+a{
+    outline: none;
+    text-decoration: none;
+}
+
+a:link,:visited{
+    color:cornsilk;
+}
+
+a:hover,:active{
+    color: darkgray;
+}
+
