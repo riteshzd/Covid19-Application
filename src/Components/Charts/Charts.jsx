@@ -54,13 +54,12 @@ const Charts = ({data:{confirmed,recovered,deaths}, country})=>{
                         data:[confirmed.value, recovered.value, deaths.value]
                     }]
                 }}
-                options={{
+                width={800}
+                height={400}
+                options={{ maintainAspectRatio: false,
                     legend: {display:false},
                     title: {display:true, text:"Current scenario in "+country , fontColor:"white"},
                 }}
-                width={800}
-                height={400}
-                options={{ maintainAspectRatio: false }}
             />
         ) : null
     );
