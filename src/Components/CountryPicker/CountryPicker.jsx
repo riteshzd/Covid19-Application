@@ -31,6 +31,10 @@ const CountryPicker = ({handleCountryChange})=>{
               ...styles,
               color:'#808080'
           }),
+          input: base=>({  //manages the text during input
+              ...base,
+              color:'#808080'
+          }),
           placeholder:(defaultStyles) =>{  //manages the placeholder string
               return{
                   ...defaultStyles,
