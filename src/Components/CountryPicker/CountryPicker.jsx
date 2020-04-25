@@ -25,8 +25,19 @@ const CountryPicker = ({handleCountryChange})=>{
         control: base => ({  //manages the select bar
             ...base,
             width: '300px',
-            backgroundColor: 'black',
-          })
+            backgroundColor: 'black'
+          }),
+          singleValue: styles=>({  //manages the selected option
+              ...styles,
+              color:'#808080'
+          }),
+          placeholder:(defaultStyles) =>{  //manages the placeholder string
+              return{
+                  ...defaultStyles,
+                  color:'#808080'
+              }
+          }  
+        
       }
     
     let countryList = []
@@ -44,7 +55,8 @@ const CountryPicker = ({handleCountryChange})=>{
             styles={customStyles}
             options={countryList} 
             onChange={(e)=>handleCountryChange(e.value)}
-            placeholder="Select a country"/>
+            placeholder="Select a country"
+            defaultValue={countryList[0]}/>
         </div>
         
     )
